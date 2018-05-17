@@ -39,6 +39,8 @@ gem 'figaro'
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'simple_form'
+gem 'haml'
+gem 'haml-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
