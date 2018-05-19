@@ -1,12 +1,20 @@
 %nav.navbar.navbar-light.bg-light
-  %a.navbar-brand{ style: ' color: darkorange; font-size: 30px;'} Escadra
-  %form.form-inline.ml-auto
-    .input-group
-      .input-group-prepend
-        %span.input-group-text#header_email &#64
-      %input.form-control{type: 'text', placeholder: 'Email', aria: { label: 'Email', describedby: 'header_email' }}
-      .input-group-prepend
-        %span.input-group-text#header_password &#128274
-      %input.form-control{type: 'text', placeholder: 'Password', aria: { label: 'Password', describedby: 'header_password' }}
-      .input-group-append
-        %button.btn.btn-outline-success{ type: 'button' } Login
+  = link_to 'Escadra', root_path, { class: 'navbar-brand', style: ' color: darkorange; font-size: 30px;'}
+  - if user_signed_in?
+    = simple_form_for(:user, url: destroy_session_path(:user), html: { role: 'form', class: 'form-inline ml-auto', method: :delete }) do |f|
+      .input-group
+        .input-group-prepend
+          %span.input-group-text= current_user.email
+        .input-group-append
+          = f.button :submit, 'Logout', class: 'btn btn-outline-success'
+  - else
+    = simple_form_for(:user, url: session_path(:user), html: { role: 'form', class: 'form-inline ml-auto'}) do |f|
+      .input-group
+        .input-group-prepend
+          %span.input-group-text &#64
+        = f.input_field :email, placeholder: 'Email', class: 'form-control'
+        .input-group-prepend
+          %span.input-group-text &#128274
+        = f.input_field :password, placeholder: 'Password', class: 'form-control'
+        .input-group-append
+          = f.button :submit, 'Login', class: 'btn btn-outline-success'
