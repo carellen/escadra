@@ -12,9 +12,9 @@
       .input-group
         .input-group-prepend
           %span.input-group-text &#64
-        = f.input_field :email, placeholder: 'Email', class: 'form-control'
+        = f.input_field :email, placeholder: 'Email', id: 'header_user_email', class: 'form-control'
         .input-group-prepend
           %span.input-group-text &#128274
-        = f.input_field :password, placeholder: 'Password', class: 'form-control'
+        = f.input_field :password, placeholder: 'Password', id: 'header_user_password', class: 'form-control'
         .input-group-append
           = f.button :submit, 'Login', class: 'btn btn-outline-success'
