@@ -7,11 +7,13 @@
           %tr
             %th Email
             %th Status
-        %tbody
-          - @users.each do |user|
-            %tr
-              %td= user.email
-              - if true
-                %td{ style: 'color: green;'}= fa_icon 'check', text: 'Confirmed'
-              - else
-                %td= fa_icon 'spinner', class: 'fa-pulse', text: 'Await confirmation...'
+        %tbody#users_table_body
+          = render @users
+    .card-footer
+      = simple_form_for(User.new, url: admin_manage_users_path, html: { class: 'form-inline' }, remote: true) do |f|
+        .input-group
+          .input-group-prepend
+            %span.input-group-text= fa_icon 'user-plus'
+          = f.input_field :email, placeholder: 'Email', label: false, id: 'email_input', class: 'form-control'
+          .input-group-append
+            = f.button :submit, 'Invite User', class: 'btn-primary'

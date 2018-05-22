@@ -11,6 +11,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 
 gem 'devise'
+gem 'devise_invitable'
 gem 'omniauth'
 
 # Use SCSS for stylesheets
@@ -51,7 +52,7 @@ gem 'font-awesome-rails'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'letter_opener'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
