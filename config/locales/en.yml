@@ -30,5 +30,18 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  main_brand_name: "Escadra"
+  logout_button: "Logout"
+  login_button: "Login"
   users:
     nav_link: "Users"
+    confirmed: "Confirmed"
+    await_confim: "Await confirmation..."
+  admin:
+    users_table_title: "Authorized Users"
+    users_table_email: "Email"
+    users_table_status: "Status"
+    invite_user_button: "Invite User"
+  guest_name: "Guest"
+  email_placeholder: "email"
+  password_placeholder: "password"

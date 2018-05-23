@@ -2,7 +2,7 @@ feature 'Admin invite new user', js: true do
 
   before do
     visit 'http://admin:admin@localhost:5000/admin/manage/users'
-    fill_in 'Email', with: 'test@new.user'
+    fill_in 'email', with: 'test@new.user'
     click_on 'Invite User'
   end
 
