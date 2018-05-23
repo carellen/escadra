@@ -1,0 +1,6 @@
+%tr{ id: ['user', user.id]}
+  %td= user.email
+  - if user.invitation_accepted?
+    %td{ style: 'color: green;'}= fa_icon 'check', text: t('users.confirmed')
+  - else
+    %td= fa_icon 'spinner', class: 'fa-pulse', text: t('users.await_confim')

@@ -1,0 +1,19 @@
+.col-md-8.col-md-offset-2
+  .card
+    %h2.card-header= t('admin.users_table_title')
+    .card-body
+      %table.table.table-striped
+        %thead
+          %tr
+            %th= t('admin.users_table_email')
+            %th= t('admin.users_table_status')
+        %tbody#users_table_body
+          = render @users
+    .card-footer
+      = simple_form_for(User.new, url: admin_manage_users_path, html: { class: 'form-inline' }, remote: true) do |f|
+        .input-group
+          .input-group-prepend
+            %span.input-group-text= fa_icon 'user-plus'
+          = f.input_field :email, placeholder: t('email_placeholder'), label: false, id: 'email_input', class: 'form-control'
+          .input-group-append
+            = f.button :submit, t('admin.invite_user_button'), class: 'btn-primary'

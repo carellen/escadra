@@ -1,0 +1,4 @@
+#Sample of application.yml
+
+admin_login: admin_login
+admin_password: admin_password

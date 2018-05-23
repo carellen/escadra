@@ -1,2 +1,8 @@
-%nav.navbar.navbar-light.bg-light
-  = link_to 'Escadra (Admin`s dashboard)', root_path, { class: 'navbar-brand', style: ' color: darkorange; font-size: 30px;'}
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  = link_to t('main_brand_name'), root_path, { class: 'navbar-brand', style: ' color: darkorange; font-size: 30px;'}
+  %button.navbar-toggler{ type: 'button', data: { toggle: 'collapse', target: '#navbarNavAltMarkup'}, aria: { controls: 'navbarNavAltMarkup', expanded: 'false', label: 'Toggle navigation' }}
+    %span.navbar-toggler-icon
+  .collapse.navbar-collapse#navbarNavAltMarkup
+    .navbar-nav
+      = link_to admin_manage_users_path, class: 'nav-item nav-link' do
+        = fa_icon 'users', text: t('users.nav_link')

@@ -1,20 +1,20 @@
 %nav.navbar.navbar-light.bg-light
-  = link_to 'Escadra', root_path, { class: 'navbar-brand', style: ' color: darkorange; font-size: 30px;'}
+  = link_to t('main_brand_name'), root_path, { class: 'navbar-brand', style: ' color: darkorange; font-size: 30px;'}
   - if user_signed_in?
     = simple_form_for(:user, url: destroy_session_path(:user), html: { role: 'form', class: 'form-inline ml-auto', method: :delete }) do |f|
       .input-group
         .input-group-prepend
           %span.input-group-text= current_user.email
         .input-group-append
-          = f.button :submit, 'Logout', class: 'btn btn-outline-success'
+          = f.button :submit, t('logout_button'), class: 'btn btn-outline-success'
   - else
     = simple_form_for(:user, url: session_path(:user), html: { role: 'form', class: 'form-inline ml-auto'}) do |f|
       .input-group
         .input-group-prepend
           %span.input-group-text &#64
-        = f.input_field :email, placeholder: 'Email', class: 'form-control'
+        = f.input_field :email, placeholder: t('email_placeholder'), id: 'header_user_email', class: 'form-control'
         .input-group-prepend
           %span.input-group-text &#128274
-        = f.input_field :password, placeholder: 'Password', class: 'form-control'
+        = f.input_field :password, placeholder: t('password_placeholder'), id: 'header_user_password', class: 'form-control'
         .input-group-append
-          = f.button :submit, 'Login', class: 'btn btn-outline-success'
+          = f.button :submit, t('login_button'), class: 'btn btn-outline-success'
