@@ -1,0 +1,13 @@
+= simple_form_for company do |f|
+  - if company.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(company.errors.count, "error")} prohibited this company from being saved:"
+      %ul
+        - company.errors.full_messages.each do |message|
+          %li= message
+
+  = f.input :unp, placeholder: 'UNP', label: false
+  = f.input :name, placeholder: 'Company name', label: false
+
+  .actions
+    = f.submit 'Save'
