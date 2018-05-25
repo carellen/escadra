@@ -13,7 +13,7 @@ describe 'the admin area is secure', type: :feature do
   end
 
   it 'fail when user try to access admin area' do
-    log_in
+    sign_up_and_log_in
     visit '/admin/main'
     expect(page).to have_http_status(401)
   end

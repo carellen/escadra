@@ -1,8 +1,16 @@
 RSpec.configure do
-  def log_in
+  def sign_up_and_log_in
+    visit '/users/sign_up'
+    fill_in 'user_email', with: 'user@example.com'
+    fill_in 'user_password', with: 'password'
+    fill_in 'user_password_confirmation', with: 'password'
+    click_on 'Sign up'
+    sleep 0.1
+    open_email 'user@example.com'
+    visit_in_email 'Confirm my account'
     visit '/'
-    fill_in 'email', with: 'user@example.com'
-    fill_in 'password', with: 'password'
+    fill_in 'header_user_email', with: 'user@example.com'
+    fill_in 'header_user_password', with: 'password'
     click_on 'Login'
   end
 

@@ -10,7 +10,7 @@
 
   %tbody
     - @companies.each do |company|
-      %tr
+      %tr{ id: ['company', company.id] }
         %td= company.id
         %td= company.unp
         %td= company.name
