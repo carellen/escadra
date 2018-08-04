@@ -2,10 +2,10 @@
 
 %table.table.striped
   %tr
-    %td UNP
+    %td #{t('companies.unp_placeholder')}
     %td= @company.unp
   %tr
-    %td Company name
+    %td #{t('companies.name_placeholder')}
     %td= @company.name
 
 = link_to 'Edit', edit_company_path(@company)

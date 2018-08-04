@@ -6,8 +6,8 @@
         - company.errors.full_messages.each do |message|
           %li= message
 
-  = f.input :unp, placeholder: 'UNP', label: false
-  = f.input :name, placeholder: 'Company name', label: false
+  = f.input :unp, placeholder: t('companies.unp_placeholder'), label: false
+  = f.input :name, placeholder: t('companies.name_placeholder'), label: false
 
   .actions
-    = f.submit 'Save'
+    = f.submit t('companies.save_button')
