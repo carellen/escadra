@@ -1,0 +1,13 @@
+%p#notice= notice
+
+%table.table.striped
+  %tr
+    %td #{t('companies.unp_placeholder')}
+    %td= @company.unp
+  %tr
+    %td #{t('companies.name_placeholder')}
+    %td= @company.name
+
+= link_to 'Edit', edit_company_path(@company)
+\|
+= link_to 'Back', companies_path

@@ -1,0 +1,23 @@
+%h1 #{t('companies.index_company')}
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th #{t('companies.id_placeholder')}
+      %th #{t('companies.unp_placeholder')}
+      %th #{t('companies.name_placeholder')}
+      %th{colspan: 3, style: 'width: 20%;'} #{t('companies.actions_placeholder')}
+
+  %tbody
+    - @companies.each do |company|
+      %tr{ id: ['company', company.id] }
+        %td= company.id
+        %td= company.unp
+        %td= company.name
+        %td= button_to 'Show', company, method: :get
+        %td= button_to 'Edit', edit_company_path(company), method: :get
+        %td= button_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to t('companies.new_company'), new_company_path

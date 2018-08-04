@@ -13,7 +13,10 @@ Rails.application.routes.draw do
     resources :main, only: :index
   end
 
-  namespace :users do
+  scope module: 'users' do
     root 'main#index'
+    scope module: 'manage' do
+      resources :companies
+    end
   end
 end
