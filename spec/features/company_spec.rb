@@ -7,7 +7,7 @@ feature 'user_manage_companies' do
 
     it 'create company' do
       visit '/companies'
-      click_on 'New Company'
+      click_on 'New company'
       fill_in 'UNP', with: '123456789'
       fill_in 'Company name', with: 'Example company'
       click_on 'Save'
