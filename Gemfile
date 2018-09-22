@@ -13,7 +13,7 @@ gem 'omniauth'
 gem 'figaro'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'mini_racer', platforms: :ruby
+gem 'mini_racer', platforms: :ruby
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
