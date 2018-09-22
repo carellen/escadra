@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   scope module: 'users' do
     root 'main#index'
     scope module: 'manage' do
-      resources :companies
+      resources :companies do
+        resources :positions
+      end
     end
   end
 end

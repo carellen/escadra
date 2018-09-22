@@ -1,0 +1,21 @@
+%h1 #{t('companies.positions.index_position')}
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th #{t('companies.positions.title_placeholder')}
+      %th #{t('companies.positions.attributes_placeholder')}
+      %th{colspan: 3, style: 'width: 20%;'} #{t('companies.positions.actions_placeholder')}
+
+  %tbody
+    - @positions.each do |position|
+      %tr{ id: ['position', position.id] }
+        %td= position.title
+        %td= position.attributes
+        %td= button_to 'Show', position, method: :get
+        %td= button_to 'Edit', edit_company_path(position), method: :get
+        %td= button_to 'Destroy', position, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to t('companies.positions.new_position'), new_company_position_path

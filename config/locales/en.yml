@@ -20,6 +20,12 @@ en:
     name_placeholder: "Company name"
     actions_placeholder: "Company actions"
     save_button: "Save company"
+    positions:
+      index_position: "Listing positions"
+      new_position: "New position"
+      title_placeholder: "Title"
+      attributes_placeholder: "Attributes"
+      actions_placeholder: "Position actions"
   guest_name: "Guest"
   email_placeholder: "email"
   password_placeholder: "password"
