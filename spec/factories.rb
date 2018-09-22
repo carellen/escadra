@@ -1,6 +1,15 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  factory :employee do
+    position "MyString"
+    user nil
+  end
+  factory :employment do
+    position "MyString"
+    company nil
+    user nil
+  end
   factory :company do
     unp '123456789'
     name 'Example company'
