@@ -38,6 +38,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'haml'
 gem 'haml-rails'
 gem 'font-awesome-rails'
+gem 'react_on_rails'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
