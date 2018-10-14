@@ -4,9 +4,17 @@
   %tr
     %td #{t('companies.unp_placeholder')}
     %td= @company.unp
+    %td= link_to 'Edit', '#'
   %tr
     %td #{t('companies.name_placeholder')}
     %td= @company.name
+    %td= link_to 'Edit', '#'
+  %tr
+    %td #{t('companies.position_placeholder')}
+    %td
+      - @company.positions.each do |position|
+        %p= position.name
+    %td= link_to 'Create', new_company_position_path(@company), class: 'btn btn-primary'
 
 = link_to 'Edit', edit_company_path(@company)
 \|

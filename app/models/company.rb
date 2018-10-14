@@ -3,6 +3,7 @@ class Company < ApplicationRecord
 
   has_many :employments
   has_many :users, through: :employments
+  has_many :positions
 
   validates :unp, presence: true, length: { is: 9 }
   validates :name, presence: true, length: { in: 2..100 }

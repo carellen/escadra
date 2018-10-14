@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2018_09_22_070248) do
 
   create_table "positions", force: :cascade do |t|
     t.string "title"
-    t.jsonb "attributes"
+    t.jsonb "position_attributes"
     t.bigint "company_id"
     t.index ["company_id"], name: "index_positions_on_company_id"
     t.index ["title", "company_id"], name: "index_positions_on_title_and_company_id", unique: true

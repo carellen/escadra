@@ -1,0 +1,1 @@
+json.extract! position, :id, :title, :position_attributes, :company_id

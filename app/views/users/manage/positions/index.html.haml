@@ -11,7 +11,7 @@
     - @positions.each do |position|
       %tr{ id: ['position', position.id] }
         %td= position.title
-        %td= position.attributes
+        %td= position.position_attributes
         %td= button_to 'Show', position, method: :get
         %td= button_to 'Edit', edit_company_path(position), method: :get
         %td= button_to 'Destroy', position, method: :delete, data: { confirm: 'Are you sure?' }

@@ -1,0 +1,1 @@
+json.position(@position, partial: 'position', as: :position)

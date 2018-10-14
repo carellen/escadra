@@ -18,6 +18,7 @@ en:
     id_placeholder: "ID"
     unp_placeholder: "UNP"
     name_placeholder: "Company name"
+    position_placeholder: "Positions"
     actions_placeholder: "Company actions"
     save_button: "Save company"
     positions:
