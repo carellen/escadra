@@ -1,0 +1,33 @@
+version: '3'
+
+volumes:
+  postgres_data: {}
+  assets:
+
+services:
+  app:
+    build:
+      context: .
+      args:
+        RUBY_VERSION: "${RUBY_VERSION}"
+      dockerfile: ./docker/app/DockerFile
+    depends_on:
+      - db
+    volumes:
+      - assets:/var/lib/assets
+
+  db:
+    image: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    build:
+      context: .
+      dockerfile: ./docker/web/DockerFile
+    depends_on:
+      - app
+    volumes:
+      - assets:/var/lib/assets
+    ports:
+      - 80:80
