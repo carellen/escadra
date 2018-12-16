@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
-import {POSITION_SET_TITLE, POSITION_UPDATE} from '../constants/positionConstants';
+import { reducer as form } from 'redux-form';
+import {POSITION_SET_TITLE, POSITION_UPDATE, ADD_MEMBER} from '../constants/positionConstants';
 import { POSITION_NEW } from '../constants/positionConstants';
 
 const position = (state = {}, action) => {
@@ -9,10 +10,13 @@ const position = (state = {}, action) => {
         id: action.id,
         title: action.title,
         position_attributes: action.position_attributes,
-        company: action.company
+        company_id: action.company_id
       };
     case POSITION_SET_TITLE:
       return {...state, title: action.title};
+    case ADD_MEMBER:
+      console.log('Adding member...');
+      return action.payload;
     default:
       return state;
   }
@@ -27,6 +31,7 @@ const railsContext = (state = {}, action) => {
 
 const positionReducer = combineReducers({
   position,
+  form,
   railsContext
 });
 

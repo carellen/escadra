@@ -2,6 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import ReactOnRails from 'react-on-rails';
 import { AppContainer } from "react-hot-loader";
+import { Values } from "redux-form-website-template";
 import { render } from "react-dom";
 
 import NewPositionContainer from '../containers/NewPositionContainer';
@@ -23,7 +24,9 @@ const NewPosition = (railsProps, railsContext, domNodeId) => {
   renderApp(NewPositionContainer);
 
   if (module.hot) {
-    module.hot.accept(['../containers/NewPositionContainer'], () => {
+    module.hot.accept([
+      '../containers/NewPositionContainer',
+    ], () => {
       renderApp(NewPositionContainer);
     })
   }

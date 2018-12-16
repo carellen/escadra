@@ -1,21 +1,18 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import FieldArraysForm from "../containers/FieldArraysForm";
+import { Values } from "redux-form-website-template";
 
-const NewPosition = ({ position, createPosition, setPositionTitle }) => (
-  <div>
-    <form onSubmit={(e) => createPosition(e.target.value)}>
-      <label htmlFor="positionTitle">
-        Position title:
-      </label>
-      <input
-        id="positionTitle"
-        type="text"
-        value={position.title}
-        onChange={(e) => setPositionTitle(e.target.value)}
-      />
-    </form>
-  </div>
-);
+const NewPosition = ({ position, createPosition }) => {
+  const handleSubmit = (values) => {
+    createPosition({ ...values, company_id: position.company_id })
+  };
+  return(
+    <div>
+      <FieldArraysForm onSubmit={handleSubmit}/>
+    </div>
+  );
+};
 
 NewPosition.propTypes = {
     createPosition: PropTypes.func.isRequired,

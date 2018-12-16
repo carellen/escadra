@@ -22,7 +22,7 @@ module Users
         @position = @company.positions.build(position_params)
         respond_to do |format|
           if @position.save
-            format.html { redirect_to @position, notice: 'Position was successfully created.' }
+            format.html { redirect_to company_positions_path(@company), notice: 'Position was successfully created.' }
           else
             format.html { render :new }
           end
@@ -61,7 +61,7 @@ module Users
       end
 
       def position_params
-        params.require(:position).permit(:id, :title, :attributes)
+        params.require(:position).permit(:id, :company_id, :title, :status, position_attributes: [:fieldTitle, :fieldType])
       end
 
       def position_json_string

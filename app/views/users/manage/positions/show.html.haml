@@ -1,0 +1,9 @@
+%h1
+  = @position.title
+- @position.position_attributes.each do |attr|
+  %h2
+    Field: "#{attr['fieldTitle']}" type: "#{attr['fieldType']}"
+%h2
+  Status: #{@position.status}
+
+= link_to 'Back', company_positions_path

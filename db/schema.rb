@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_22_070248) do
+ActiveRecord::Schema.define(version: 2018_11_04_095309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2018_09_22_070248) do
     t.string "title"
     t.jsonb "position_attributes"
     t.bigint "company_id"
+    t.boolean "status", default: false
     t.index ["company_id"], name: "index_positions_on_company_id"
     t.index ["title", "company_id"], name: "index_positions_on_title_and_company_id", unique: true
   end
